@@ -71,23 +71,23 @@ printf("Message frome server: %s", message);
 - 소켓을 닫아도 출력 버퍼에 남아있는 데이터는 계속해서 전송이 이뤄진다
 - 소켓을 닫으면 입력 버퍼에 남아 있는 데이터는 소멸되어 버린다
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/116e15d7-4b79-43f8-b9f6-7c2ce2c102da/image.png)
+<img width="699" alt="1" src="https://github.com/user-attachments/assets/c90fffa7-8f2e-4f1d-b73b-7a9b18fa919f">
 
 - 버퍼가 존재하기 때문에 데이터의 슬라이딩 윈도우 프로토콜의 적용이 가능하다
 - 슬라이딩 윈도우 프로토콜로 버퍼가 차고 넘치는 상황이 발생하지 않는다
 
 ### TCP의 내부 동작 원리1 : 상대 소켓과의 연결
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/c3348689-c8a3-4490-90be-d6df0ee8401f/image.png)
+<img width="967" alt="2" src="https://github.com/user-attachments/assets/b2765624-a4a5-46b8-bd42-fef2b2474198">
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/fe90f07a-c971-49af-a585-7584f36e6353/image.png)
+<img width="1116" alt="3" src="https://github.com/user-attachments/assets/ec04c87f-1572-48a9-b991-2ceb3e380398">
 
 - 위 과정을 통해 데이터를 전송하는 기준이 만들어 짐
 - 3-way hand shake
 
 ### TCP의 내부 동작 원리2 : 상대 소켓과의 데이터 송수신
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/cf149e8c-c984-4aba-acce-c6cf41fff567/image.png)
+<img width="373" alt="4" src="https://github.com/user-attachments/assets/bb43ad65-2702-4202-b707-9c78746d6f5a">
 
 - 1200이라는 번호로 100byte를 보낸다
 - 만약 호스트 B가 제대로 받았다면, “1301이라는 번호를 붙여서 보내라”는 신호를 줄 것
@@ -96,12 +96,12 @@ printf("Message frome server: %s", message);
 - ACK 번호 → SEQ 번호 + 전송된 바이트 크기 + 1
 - ACK의 값을 전성된 바이트 크기만큼 증가시키는 이유는 패킷의 전송유무 뿐만 아니라, 데이터의 손실유무까지 확인하기 위함이다
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/4aba64fa-1710-415c-b9c8-825b0e778a28/image.png)
+<img width="430" alt="5" src="https://github.com/user-attachments/assets/382a38f4-6565-41e6-939c-47edc7c81a4c">
 
 - SEQ 전송 시 타이머 작동, 그리고 SEQ에 대한 ACK가 전송되지 않을 경우 데이터 재전송
 
 ### TCP의 내부동작 원리3 : 상대 소켓과의 연결종료
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/efd8a1cc-68a6-4c5b-a462-ef2d1084e355/image.png)
+<img width="782" alt="6" src="https://github.com/user-attachments/assets/e197832e-4b6f-482a-b8ea-8cdf097e5b1a">
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f0d09fab-f760-445a-969a-74459f3b88cd/6528b07f-bcaa-40b6-ac1b-9695924aa450/image.png)
+<img width="1108" alt="7" src="https://github.com/user-attachments/assets/04361445-e403-4e92-96aa-45793f8bc5df">
